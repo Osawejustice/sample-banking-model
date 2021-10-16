@@ -1,0 +1,42 @@
+#// +------------------------------------------------------------------------+
+# // | @author        : Michael Arawole (Logad Networks)
+# // | @author_url    : https://logad.net
+# // | @author_email  : logadscripts@gmail.com
+# // | @date          : 26 Jul, 2021 02:24PM
+# // +------------------------------------------------------------------------+
+# // | Copyright (c) 2021 Logad Networks. All rights reserved.
+# // +------------------------------------------------------------------------+
+
+RewriteEngine on
+
+Options -Indexes
+# HTTPS ##
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^logout$ sources/logout.php [L,QSA]
+RewriteRule ^core/$ ./ [F]
+RewriteRule ^sources/$ ./ [F]
+
+## Backend ##
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^dashboard/backend/([a-zA-Z_-]+)$ dashboard/backend/handler.php?handler=$1 [L,QSA]
+RewriteRule ^dashboard/backend/$ ./ [F]
+
+## Admin Dashboard ##
+RewriteRule ^dashboard/?$ dashboard/index.php [L,QSA]
+RewriteRule ^dashboard/login$ dashboard/login.php [L,QSA]
+# RewriteRule ^dashboard/(fonts|js|css|img)\/(.*)$ admin/$1/$2 [L,QSA]
+RewriteRule ^dashboard/([a-z_-]+)$ dashboard/index.php?page=$1 [L,QSA]
+RewriteRule ^dashboard/([a-z_-]+)/$ dashboard/$1 [R]
+RewriteRule ^dashboard/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ dashboard/index.php?page=$1&subpage=$2 [NC,QSA]
+
+## All pages ##
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L,QSA]
+# RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&subpage=$2 [L,QSA]

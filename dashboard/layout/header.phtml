@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title><?=$page?> | Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="<?=$baseurl?>/">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- jquery.vectormap css -->
+        <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <!-- Autocomplete-->
+        <link href="assets/libs/autocomplete/style.css" rel="stylesheet" type="text/css" />
+
+        <!-- DataTables -->
+        <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-select-bs4/css//select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+
+        <!--  Ldbtn -->
+        <link href="assets/libs/ldbtn/ld-loading.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/ldbtn/ldbtn.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Summernote css -->
+        <link href="assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+        <!-- Notyf Plugin -->
+        <link rel="stylesheet" type="text/css" href="assets/libs/notyf/notyf.min.css">
+
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+
+        <style type="text/css">
+            .badge {
+                padding: .4rem .4rem;
+            }
+            .card-body .card-title:not(.mb-*) {
+                margin-bottom: 1.5em;
+            }
+            .card-header {
+                background-color: #e0e3e4;
+            }
+            .buttons-html5 i {
+                font-size: 1.2rem;
+            }
+            div.dt-buttons {
+                float: right;
+                margin-bottom: 1rem;
+            }
+            div.dataTables_filter {
+                text-align: left!important;
+            }
+            ul.timeline {
+                list-style-type: none;
+                position: relative;
+            }
+            ul.timeline:before {
+                content: ' ';
+                background: #d4d9df;
+                display: inline-block;
+                position: absolute;
+                left: 29px;
+                width: 2px;
+                height: 100%;
+                z-index: 400;
+            }
+            ul.timeline > li {
+                margin: 20px 0;
+                padding-left: 20px;
+            }
+            ul.timeline > li:before {
+                content: ' ';
+                background: white;
+                display: inline-block;
+                position: absolute;
+                border-radius: 50%;
+                border: 3px solid #22c0e8;
+                left: 20px;
+                width: 20px;
+                height: 20px;
+                z-index: 400;
+            }
+            .modal {
+                padding-right: 0px !important;
+            }
+            .modal-img {
+                width: 100%!important;
+            }
+            .form-control:disabled, .form-control[readonly] {
+                background-color: rgb(132 128 128 / 30%);
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body data-sidebar="dark">
